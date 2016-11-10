@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if detected %}
+    <p>Detected: {{ detected }}</p>
+  {% else %}
+    <p>Sorry, we were unable to detect the card you uploaded.</p>
+  {% endif %}
+
+  {% if cards %}
+    <ol>
+    {% for distance, text in cards[:5] %}
+      <li>[{{ distance }}] {{ text }}</li>
+    {% endfor %}
+    </ol>
+  {% endif %}
+
+  <p>Why not try another card?</p>
+{% endblock %}

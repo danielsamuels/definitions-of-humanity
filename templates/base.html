@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Definitions of Humanity</title>
+  <style>
+    body {
+      margin: 1em auto;
+      max-width: 40em;
+      padding: 0 .62em;
+      font: 1.2em/1.62em sans-serif;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2em;
+    }
+
+    @media print {
+      body {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="main-content">
+      <h1><a href="/">Definitions of Humanity</a></h1>
+      <p>Explaining what those weird <em>Cards Against Humanities</em> cards mean.</p>
+
+      {% block content %}{% endblock %}
+
+      <form id="imageForm" action="/" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*">
+        <input type="submit">
+      </form>
+
+    </section>
+  </div>
+
+  <script>
+  document.querySelector("input[type=file]").onchange = function (event) {
+    imageForm.submit()
+  }
+  </script>
+</body>
+</html>
